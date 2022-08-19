@@ -1,14 +1,14 @@
 echo off
 echo.
 echo  =============================================================
-echo  = BitLocker Activation Script by Andre Bender		          =
-echo  = ALHO Group Services GmbH				  				  =
+echo  = BitLocker Activation Script by Andre Bender		  =
+echo  = ALHO Group Services GmbH				  =
 echo  =============================================================
 
 chcp 1252>nul
 
 set test /a = "qrz"
-set ue=ü
+set ue=Ã¼
 
 chcp 850>nul
 
@@ -29,8 +29,8 @@ powershell Get-BitlockerVolume
 
 echo.
 echo  =============================================================
-echo  = Es sieht aus als wäre (%systemdrive%\) noch nicht         =
-echo  = verschlüsselt. BitLocker wird aktiviert.                  =
+echo  = Es sieht aus als wÃ¤re (%systemdrive%\) noch nicht         =
+echo  = verschlÃ¼sselt. BitLocker wird aktiviert.                  =
 echo  =============================================================
 for /F %%A in ('wmic /namespace:\\root\cimv2\security\microsofttpm path win32_tpm get IsEnabled_InitialValue ^| findstr "TRUE"') do (
 if "%%A"=="TRUE" goto nextcheck
@@ -79,9 +79,9 @@ for /F "tokens=2 delims= " %%A in ('manage-bde -status %systemdrive% ^| findstr 
 :EncryptionFailed
 echo.
 echo  =============================================================
-echo  = Verschlüsselung auf Festplatte (%systemdrive%\) failed.   =
-echo  = Die Aktivierung des BitLockers hat nicht funktioniert.     =
-echo  = Es wurde kein AES oder XTS-AES Status ermittelt.		  =
+echo  = VerschlÃ¼sselung auf Festplatte (%systemdrive%\) failed.   =
+echo  = Die Aktivierung des BitLockers hat nicht funktioniert.    =
+echo  = Es wurde kein AES oder XTS-AES Status ermittelt.	  =
 echo  =============================================================
 
 echo Closing session in 30 seconds...
@@ -91,9 +91,9 @@ Exit
 :TPMFailure
 echo.
 echo  =============================================================
-echo  = Verschlüsselung auf Festplatte (%systemdrive%\) failed.   =
+echo  = VerschlÃ¼sselung auf Festplatte (%systemdrive%\) failed.   =
 echo  = Eventuell ist der TPM Chip im BIOS deaktiviert.           =
-echo  = TPMPresent und TPMReady muss dafür auf True stehen.       =
+echo  = TPMPresent und TPMReady muss dafÃ¼r auf True stehen.       =
 echo  =                                                           =
 echo  = TPM Status sieht wie folgt aus:                           =
 echo  =============================================================
@@ -107,9 +107,9 @@ Exit
 :EncryptionCompleted
 echo.
 echo  =============================================================
-echo  = Sieht aus als wäre (%systemdrive%) bereits verschlüsselt  =
-echo  = oder wird gerade verschlüsselt. 					      =
-echo  = Der Verschlüsselungsstatus sieht wie folgt aus:           =
+echo  = Sieht aus als wÃ¤re (%systemdrive%) bereits verschlÃ¼sselt  =
+echo  = oder wird gerade verschlÃ¼sselt. 			  =
+echo  = Der VerschlÃ¼sselungsstatus sieht wie folgt aus:           =
 echo  =============================================================
 
 powershell Get-BitlockerVolume
@@ -121,7 +121,7 @@ Exit
 :ElevateAccess
 echo  =============================================================
 echo  = Das Skript muss als Administrator gestartet werden.       =
-echo  = Bitte das Skript rechtsklicken und als Admin ausführen.    =
+echo  = Bitte das Skript rechtsklicken und als Admin ausfÃ¼hren.   =
 echo  =============================================================
 
 echo Closing session in 20 seconds...
