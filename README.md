@@ -1,5 +1,8 @@
 # EnableBitLocker for Windows 10/11
 
+Info: This script only works on a german language system, since the function 'findstr' searches for german words.
+For english systems you could replace "Verschlüsselungsmethode" with "Encryption Method" - should work.
+
 This script enables BitLocker on C: and checks for TPM chip. If TPM is disabled, the TPM will be activated. 
 If no TPM is detected or drive is already encrypted, the script will be skipped to end.
 
