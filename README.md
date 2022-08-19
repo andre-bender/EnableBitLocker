@@ -1,5 +1,4 @@
-# EnableBitLocker
-EnableBitLocker for Windows 10/11
+# EnableBitLocker for Windows 10/11
 
 This script enables BitLocker on C: and checks for TPM chip. If TPM is disabled, the TPM will be activated. 
 If no TPM is detected or drive is already encrypted, the script will be skipped to end.
