@@ -12,4 +12,4 @@ I recommend creating a GPO with the following settings:
 - Plan a task
 - Run the task with a delay of 30 seconds after logon
 - Assign SYSTEM User with high priviliges
-- Configure the action like this: powershell.exe <Name of Script.bat>
+- Configure the action like this: powershell.exe Name of Script.bat
