@@ -2,7 +2,6 @@ echo off
 echo.
 echo  =============================================================
 echo  = BitLocker Activation Script by Andre Bender		  =
-echo  = ALHO Group Services GmbH				  =
 echo  =============================================================
 
 chcp 1252>nul
